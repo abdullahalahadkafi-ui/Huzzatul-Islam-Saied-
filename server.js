@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'abdullahalahadkafi@gmail.com', // 🔴 এখানে আপনার জিমেইল দিন
-        pass: 'otvy hxdl ltie brpu' // 🔴 এখানে অ্যাপ পাসওয়ার্ড দিন (সাধারণ পাসওয়ার্ড নয়)
+        pass: 'hflg hyow vdhy fzve' // 🔴 এখানে অ্যাপ পাসওয়ার্ড দিন (সাধারণ পাসওয়ার্ড নয়)
     }
 });
 
@@ -70,3 +70,4 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 
 });
+
