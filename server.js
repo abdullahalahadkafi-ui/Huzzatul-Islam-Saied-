@@ -12,6 +12,10 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // HTML ফাইল লোড করার জন্য
+// 👇 ঠিক এই জায়গায় নিচের লাইনটি কপি করে বসান 👇
+app.use(express.static(__dirname)); 
+
+app.use(express.static(path.join(__dirname, 'public'))); // আগের লাইন (এটাও থাক)
 
 // HTML ফাইল দেখানোর জন্য
 app.get('/', (req, res) => {
@@ -64,4 +68,5 @@ app.post('/send-email', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+
 });
