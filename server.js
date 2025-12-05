@@ -12,22 +12,30 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // HTML ফাইল লোড করার জন্য
-// 👇 ঠিক এই জায়গায় নিচের লাইনটি কপি করে বসান 👇
+
+// 👇 এই লাইনটি নতুন করে যুক্ত করুন (এটা ছবি দেখাতে সাহায্য করবে)
 app.use(express.static(__dirname)); 
 
-app.use(express.static(path.join(__dirname, 'public'))); // আগের লাইন (এটাও থাক)
+// আগের লাইন (থাকলে থাকুক, সমস্যা নেই)
+app.use(express.static(path.join(__dirname, 'public')));
 
 // HTML ফাইল দেখানোর জন্য
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// ইমেইল পাঠানোর সেটআপ (Gmail)
+// ইমেইল পাঠানোর সঠিক সেটআপ (Gmail Port 587)
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false, // 587 পোর্টের জন্য false দিতে হয়
     auth: {
-        user: 'abdullahalahadkafi@gmail.com', // 🔴 এখানে আপনার জিমেইল দিন
-        pass: 'hflg hyow vdhy fzve' // 🔴 এখানে অ্যাপ পাসওয়ার্ড দিন (সাধারণ পাসওয়ার্ড নয়)
+        user: 'abdullahalahadkafi@gmail.com',
+        pass: 'otvy hxdl ltie brpu' // আপনার অ্যাপ পাসওয়ার্ড
+    },
+    tls: {
+        rejectUnauthorized: false
     }
 });
 
@@ -68,6 +76,4 @@ app.post('/send-email', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-
 });
-
