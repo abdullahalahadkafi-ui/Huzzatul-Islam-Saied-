@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হুজ্জাতুল ইসলাম সাঈদ | জাতীয় যুবশক্তি</title>
+    
+    <!-- ফন্ট এবং আইকন -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS (ডিজাইন ফ্রেমওয়ার্ক) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #003366; /* গাঢ় নীল - আভিজাত্যের প্রতীক */
+            --secondary: #d4af37; /* গোল্ডেন - প্রিমিয়াম লুক */
+            --text-dark: #333;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        /* নেভিগেশন বার */
+        .navbar {
+            background-color: var(--primary);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            color: var(--secondary) !important;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        .nav-link {
+            color: #fff !important;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        /* হিরো সেকশন */
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.8)), url('https://source.unsplash.com/1600x900/?politics,crowd');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .designation {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-left: 4px solid var(--secondary);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn-custom:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* সেকশন হেডিং */
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            color: var(--primary);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .section-title h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* কার্ড ডিজাইন */
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--secondary);
+        }
+        .icon-box {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* প্রোফাইল ছবি */
+        .profile-img-container {
+            position: relative;
+            padding: 20px;
+        }
+        .profile-img-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            border-top: 5px solid var(--secondary);
+            border-left: 5px solid var(--secondary);
+        }
+        .profile-img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* কন্টাক্ট সেকশন */
+        .contact-info-box {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .contact-icon {
+            color: var(--secondary);
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        /* ফুটার */
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-section { text-align: center; height: auto; padding: 100px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- নেভিগেশন বার -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">HUZZATUL ISLAM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">হোম</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">আমার সম্পর্কে</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vision">ভিশন</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">গ্যালারি</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">যোগাযোগ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- হিরো সেকশন -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <p class="hero-subtitle">বিসমিল্লাহির রাহমানির রাহিম</p>
+                    <h1 class="hero-title">হুজ্জাতুল ইসলাম সাঈদ <br><span style="font-size: 2rem; color: #ccc;">(চির বিপ্লবী)</span></h1>
+                    <div class="designation">
+                        <h4 class="m-0">সিনিয়র যুগ্ন সদস্য সচিব</h4>
+                        <p class="m-0">জাতীয় যুবশক্তি, এনসিপি, চট্টগ্রাম মহানগর</p>
+                    </div>
+                    <br>
+                    <p class="lead mb-4">তারুণ্যের শক্তি, আগামীর চট্টগ্রাম। ন্যায়বিচার এবং যুব সমাজের অধিকার আদায়ে আমি সর্বদা আপনাদের পাশে।</p>
+                    <a href="#contact" class="btn-custom">আমার সাথে যোগ দিন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- আমার সম্পর্কে -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="profile-img-container">
+                        <!-- এখানে আপনার নিজের ছবি দিন -->
+                        <img src="profile c.png" alt="Huzzatul Islam Saied" class="profile-img">
+                    </div>
+                </div>
+                <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
+                    <h5 style="color: var(--secondary); font-weight: 600;">পরিচিতি ও রাজনৈতিক জীবন</h5>
+                    <h2 style="color: var(--primary); font-weight: 700; margin-bottom: 20px;">জনগণের সেবায় নিবেদিত প্রাণ</h2>
+                    <p>আসসালামু আলাইকুম। আমি <strong>হুজ্জাতুল ইসলাম সাঈদ</strong>। আমি বিশ্বাস করি রাজনীতি কোনো পেশা নয়, বরং এটি মানুষের সেবা করার একটি মহৎ মাধ্যম।</p>
+                    <p>বর্তমানে আমি <strong>জাতীয় যুবশক্তি, এনসিপি, চট্টগ্রাম মহানগর</strong>-এর যুগ্ন সদস্য সচিব হিসেবে দায়িত্ব পালন করছি। আমার রাজনৈতিক জীবনের মূল লক্ষ্য হলো একটি বৈষম্যহীন, দুর্নীতিমুক্ত এবং আধুনিক সমাজ গঠন করা যেখানে যুবকরাই হবে চালিকাশক্তি।</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <i class="fas fa-check-circle text-primary"></i> <strong>সমাজসেবা:</strong> মানুষের বিপদে পাশে থাকা।
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <i class="fas fa-check-circle text-primary"></i> <strong>যুব উন্নয়ন:</strong> বেকারত্ব দূরীকরণ ও কর্মসংস্থান।
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <i class="fas fa-check-circle text-primary"></i> <strong>শিক্ষা বিস্তার:</strong> আধুনিক শিক্ষা ব্যবস্থার প্রসার।
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <i class="fas fa-check-circle text-primary"></i> <strong>ন্যায়বিচার:</strong> নিপীড়িত মানুষের অধিকার আদায়।
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ভিশন ও মিশন -->
+    <section id="vision" class="section-padding" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>আমার লক্ষ্য ও উদ্দেশ্য</h2>
+                <p>আগামীর চট্টগ্রাম গড়তে আমাদের পরিকল্পনা</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card text-center">
+                        <div class="icon-box"><i class="fas fa-users"></i></div>
+                        <h3>সংগঠনকে শক্তিশালী করা</h3>
+                        <p>তৃণমূল পর্যায় থেকে জাতীয় যুবশক্তিকে সুসংগঠিত করে একটি শক্তিশালী রাজনৈতিক প্ল্যাটফর্ম তৈরি করা।</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card text-center">
+                        <div class="icon-box"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>মানবিক কার্যক্রম</h3>
+                        <p>বন্যা, দুর্যোগ ও মহামারীতে অসহায় মানুষের পাশে দাঁড়ানো এবং নিয়মিত ত্রাণ বিতরণ কর্মসূচি পরিচালনা।</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card text-center">
+                        <div class="icon-box"><i class="fas fa-balance-scale"></i></div>
+                        <h3>দুর্নীতিমুক্ত সমাজ</h3>
+                        <p>ঘুষ, দুর্নীতি ও মাদকের বিরুদ্ধে জিরো টলারেন্স নীতি গ্রহণ এবং যুব সমাজকে সচেতন করা।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- গ্যালারি সেকশন -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>কার্যক্রমের স্থিরচিত্র</h2>
+            </div>
+            <div class="row g-4">
+                <!-- ছবি ১ -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in">
+                    <img src="518370911_24671364965888134_8022674608823231697_n.jpg" class="img-fluid rounded shadow" alt="Activity">
+                </div>
+                <!-- ছবি ২ -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in">
+                    <img src="518545187_24607364188954879_3180363563136189283_n.jpg" class="img-fluid rounded shadow" alt="Activity">
+                </div>
+                <!-- ছবি ৩ -->
+                <div class="col-md-4 col-sm-6" data-aos="zoom-in">
+                    <img src="518295857_24640144915676806_7874493024146049737_n.jpg" class="img-fluid rounded shadow" alt="Activity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- যোগাযোগ সেকশন -->
+    <!-- যোগাযোগ সেকশন -->
+    <section id="contact" class="section-padding" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4" data-aos="fade-right">
+                    <div class="contact-info-box h-100">
+                        <h3 class="mb-4">যোগাযোগের ঠিকানা</h3>
+                        <p class="mb-4">যে কোনো প্রয়োজনে বা পরামর্শে আমার সাথে যোগাযোগ করতে পারেন। আমি সর্বদা আপনাদের কথা শুনতে প্রস্তুত।</p>
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <strong>অফিস:</strong><br>
+                                চট্টগ্রাম মহানগর কার্যালয়, জাতীয় যুবশক্তি।
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <strong>মোবাইল:</strong><br>
+                                +880 1XXXXXXXXX <!-- এখানে আপনার নাম্বার দিন -->
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <strong>ইমেইল:</strong><br>
+                                huzzatulsaied007@gmail.com
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h5 class="mb-3">সোশ্যাল মিডিয়া:</h5>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="bg-white p-5 rounded shadow">
+                        <h3 class="mb-4 text-center" style="color: var(--primary);">বার্তা পাঠান</h3>
+                        
+                        <!-- সঠিক ফর্ম শুরু -->
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" id="name" class="form-control p-3" placeholder="আপনার নাম" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" id="phone" class="form-control p-3" placeholder="মোবাইল নম্বর" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" id="email" class="form-control p-3" placeholder="ইমেইল (অটো-রিপ্লাই পেতে ইমেইল দিন)" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea id="message" class="form-control p-3" rows="5" placeholder="আপনার বার্তা..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100" id="sendBtn">বার্তা পাঠান</button>
+                            <p id="statusMsg" class="text-center mt-3" style="font-weight: bold;"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ফুটার -->
+    <footer>
+        <div class="container">
+            <h3>হুজ্জাতুল ইসলাম সাঈদ</h3>
+            <p>সিনিয়র যুগ্ন সদস্য সচিব | জাতীয় যুবশক্তি, এনসিপি, চট্টগ্রাম মহানগর</p>
+            <div class="social-links mb-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">
+                &copy; ২০২৫ সর্বস্বত্ব সংরক্ষিত | ডিজাইন ও ডেভেলপমেন্ট
+            </p>
+        </div>
+    </footer>
+
+    <!-- স্ক্রিপ্ট ফাইল -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // অ্যানিমেশন চালু করার জন্য
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // ইমেইল পাঠানোর স্ক্রিপ্ট (সার্ভারের সাথে কানেক্ট করবে)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const sendBtn = document.getElementById('sendBtn');
+            const statusMsg = document.getElementById('statusMsg');
+            
+            sendBtn.innerHTML = "পাঠানো হচ্ছে...";
+            sendBtn.disabled = true;
+            statusMsg.innerText = "";
+
+            const data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            fetch('/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(result => {
+                if (result === 'success') {
+                    statusMsg.style.color = "green";
+                    statusMsg.innerText = "আপনার বার্তা সফলভাবে পাঠানো হয়েছে! ধন্যবাদ।";
+                    document.getElementById('contactForm').reset();
+                } else {
+                    statusMsg.style.color = "red";
+                    statusMsg.innerText = "কোথাও সমস্যা হয়েছে। আবার চেষ্টা করুন।";
+                }
+                sendBtn.innerHTML = "বার্তা পাঠান";
+                sendBtn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                statusMsg.style.color = "red";
+                statusMsg.innerText = "সার্ভার এরর! সার্ভার চালু আছে কিনা চেক করুন।";
+                sendBtn.innerHTML = "বার্তা পাঠান";
+                sendBtn.disabled = false;
+            });
+        });
+    </script>
+    <!-- ফুটার -->
+    <footer>
+        <div class="container">
+            <h3>হুজ্জাতুল ইসলাম সাঈদ</h3>
+            <p>সিনিয়র যুগ্ন সদস্য সচিব | জাতীয় যুবশক্তি, এনসিপি, চট্টগ্রাম মহানগর</p>
+            <div class="social-links mb-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">
+                &copy; ২০২৫ সর্বস্বত্ব সংরক্ষিত | ডিজাইন ও ডেভেলপমেন্ট
+            </p>
+        </div>
+    </footer>
+
+    <!-- স্ক্রিপ্ট ফাইল -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // অ্যানিমেশন চালু করার জন্য
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
